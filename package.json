@@ -1,20 +1,17 @@
 {
-  "name": "my-vue-app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "vue": "^3.3.4"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "vue-tsc": "^1.8.5"
-  }
+	"name": "cashbook",
+	"version": "0.0.0",
+	"scripts": {
+		"build": "turbo build",
+		"clean": "turbo clean",
+		"dev": "turbo dev --no-cache  --continue",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"lint": "turbo lint",
+		"test": "turbo test"
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1",
+		"turbo": "latest"
+	},
+	"packageManager": "pnpm@7.15.0"
 }
