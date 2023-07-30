@@ -3,19 +3,19 @@ import { onMounted, ref } from "vue";
 
 const respnseStr = ref();
 
-const testApi = fetch("/api/healthz").then(function (response) {
+const testApi = fetch("/api/hello").then(function (response) {
 	//response.status表示响应的http状态码
 	if (response.status === 200) {
 		//json是返回的response提供的一个方法,会把返回的json字符串反序列化成对象,也被包装成一个Promise了
 		return response.json();
 	} else {
-		return { message: "" };
+		return { data: {} };
 	}
 });
 
 onMounted(() => {
 	testApi.then((res) => {
-		respnseStr.value = res.message;
+		respnseStr.value = res.data.time;
 		console.log(res);
 	});
 });
